@@ -1,23 +1,53 @@
+{% load staticfiles %}
 <html>
+
 <head>
 <title>Xpaza's blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'blog/css/css/bootstrap.css' %}" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<div>
-<h1><a href="">Django Girls Blog</a></h1>
+
+<div class="page-header">
+<!--img src="{% static "blog/images/car.jpg" %}" class="img-rounded"-->
+<h1><a href="">Xpaza's Blog</a></h1>
 </div>
-<div>
-<p>published: 14.06.2014, 12:14</p>
-<h2><a href="">My first post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi po
-rta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum mass
-a justo sit amet risus.</p>
+
+
+<div class="row">
+	<div class="col-lg-9">
+<div class="post">
+{% for post in posts %}
+<div class="well">
+	<h1><a href=""> {{ post.tittle }} </a></h1>
+	<p>Published date: {{ post.published_date }}</p>
+	<p><{{ post.text|linebreaksbr }}</p>
 </div>
-<div>
-<p>published: 14.06.2014, 12:14</p>
-<h2><a href="">My second post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi po
-rta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+
+
+{% endfor %}
 </div>
+	</div>
+
+	 <div class="col-lg-3">
+	 	<div class="jumbotron">
+	 		 <p>Hello World</p>
+	 	</div>
+	 	
+	 </div>
+</div>
+
+
+ <form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+</form> 
+
 </body>
+
 </html>
