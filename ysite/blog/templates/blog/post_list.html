@@ -17,36 +17,26 @@
 </div>
 
 
-<div class="row">
-	<div class="col-lg-9">
-<div class="post">
-{% for post in posts %}
-<div class="well">
-	<h1><a href=""> {{ post.tittle }} </a></h1>
-	<p>Published date: {{ post.published_date }}</p>
-	<p><{{ post.text|linebreaksbr }}</p>
-</div>
-
-
-{% endfor %}
-</div>
+<div class="content container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			{% for post in posts %}
+			<div class="post well">
+				<div class="date">
+					<p><b>Published</b>: <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-time"></span> 
+        </button> {{ post.published_date }}</p>
+				</div>
+				<h1><a href="">{{ post.tittle }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+			{% endfor %}
+		</div>
 	</div>
 
-	 <div class="col-lg-3">
-	 	<div class="jumbotron">
-	 		 <p>Hello World</p>
-	 	</div>
-	 	
-	 </div>
 </div>
 
-
- <form>
-  First name:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname">
-</form> 
+ 
 
 </body>
 
