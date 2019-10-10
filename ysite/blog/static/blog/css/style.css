@@ -1,21 +1,36 @@
+@charset "utf-8";
+
+div {
+	overflow: auto;
+}
+
 h1 a {
-	color: white;
+	color: green;
 	font-family: "Courier New";
 }
 
-body {
+.main_body {
+	background-image: url("/static/blog/images/forest.jpg");
+}
 
-    background-color: rgb(85, 98, 172);
-
-    padding-left: 30px;
-    padding-right: 30px;
-
+hr {
+ 	display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color: red;
 }
 
 .page-header {
-background-color: orange;
-margin-top: 0;
-padding: 20px 20px 20px 40px;
+	background: #32382b;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active{
@@ -25,7 +40,12 @@ padding: 20px 20px 20px 40px;
 }
 
 .content {
-
+	background: #87965a;
+	border-style: none;
+	padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 40px;
+	margin-right: 40px;
 }
 
 h1, h2, h3, h4 {
@@ -42,7 +62,7 @@ h1, h2, h3, h4 {
 }
 
 .post-form textarea, .post-form input {
-	width: 100%;
+	width: 50%;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
@@ -61,12 +81,54 @@ margin-right: 20px;
 	color: :#000000;
 }
 
+.container-fuild h2 {
+	color: blue; 
+}
+
 .well{
 	color: white;
-	background-color: rgb(58, 22, 29);
+	background-color: #343730;
 	border-left: 10px solid rgb(154, 216, 11);
+	margin-bottom: 5px;
+}
+
+.jumbotron {
+	border-style: inset;
 }
 
 .btn{
 	background-color: rgb(245, 239, 161);
+}
+
+.img-circle{
+	width: 120px;
+	float: left;
+}
+
+.footer{
+	background-color: #004d33;;
+	color: white;
+	margin-top: 0px;
+}
+
+.pic{
+	width: 100%;
+	height:50%;
+	float: ;
+
+}
+.col-sm-9{
+	float: right;
+}
+
+.form-group{
+	background-color: lightblue;
+}
+
+
+
+
+#myHeader{
+	background-color: ;
+	width: 40%;
 }

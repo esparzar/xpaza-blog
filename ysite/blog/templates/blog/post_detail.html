@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="post">
+
+<div class="container-fuild">
+	<div class="jumbotron">
+
+{% if user.is_authenticated %}
+	<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
+		<span class="glyphicon glyphicon-pencil"></span>
+	</a>
+{% endif %}
+	
+	<h2>{{ post.tittle }}</h2>
+	<p>{{ post.text|linebreaksbr }}</p>
+	
+{% if post.published_date %}
+	<div class="date well well-sm">
+		<p>{{ post.published_date }}</p>
+	</div>
+{% endif %}
+	</div>
+</div>	
+
+</div>
+{% endblock %}

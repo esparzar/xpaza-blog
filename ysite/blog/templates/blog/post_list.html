@@ -1,43 +1,41 @@
-{% load staticfiles %}
-<html>
+{% extends 'blog/base.html' %}
 
-<head>
-<title>Xpaza's blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="{% static 'blog/css/css/bootstrap.css' %}" rel="stylesheet"/>
-<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
-<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-</head>
+{% block content %}
 
-<body>
+{% for post in posts %}
 
-<div class="page-header">
-<!--img src="{% static "blog/images/car.jpg" %}" class="img-rounded"-->
-<h1><a href="">Xpaza's Blog</a></h1>
+<div class="post">
+    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.tittle }}</a></h1>
+	  <p>{{ post.text|linebreaksbr }}</p>
+
+  <div class="date well well-sm">
+    <p><b>Published</b>: <button type="button" class="btn btn-default btn-sm">
+    <span class="glyphicon glyphicon-time"></span> 
+    </button> {{ post.published_date }}</p>
+  </div>
 </div>
 
+<hr>
 
-<div class="content container-fluid">
-	<div class="row">
-		<div class="col-sm-12">
-			{% for post in posts %}
-			<div class="post well">
-				<div class="date">
-					<p><b>Published</b>: <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-time"></span> 
-        </button> {{ post.published_date }}</p>
-				</div>
-				<h1><a href="">{{ post.tittle }}</a></h1>
-				<p>{{ post.text|linebreaksbr }}</p>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
+{% endfor %}
+{% endblock %}
 
-</div>
 
- 
 
-</body>
+{% block aside %}
+ <form>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form> 
 
-</html>
+{% endblock %}

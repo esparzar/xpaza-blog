@@ -1,0 +1,58 @@
+body {
+	background: url("/static/images/fk.jpg");
+}
+
+.mainrow {
+	text-align: left;
+	padding: 15px;
+	background-color: #cbcfd9;
+}
+
+.container {
+	border-left: 40px;
+	border-right: 40px;
+}
+
+.empty {
+	height: 200px;
+	background: #ff4b00;
+}
+
+
+.img-thumbnail{
+	width: 100%;
+	height: 100%;
+}
+
+.page-header {
+		text-align: center;
+		padding: 15px; 
+	 	background: #f3f2e7;
+}
+
+.subheader {
+	color: #ff4b00;
+}
+
+#b1 { 
+	color: #ff4b00;
+ }
+
+ .objectives {
+ 	text-align: center;
+ }
+
+ h2 {
+ 	color: #ff4b00; 
+ }
+
+ hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 5px;
+    color: #373538;
+} 

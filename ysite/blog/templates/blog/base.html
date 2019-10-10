@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'blog/css/css/bootstrap.css' %}" rel="stylesheet"/>
+<link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<title>Xpaza's blog</title>
+</head>
+
+<body class="main_body">
+
+	
+<div class="container-fluid page-header">
+
+	<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	<a href="{% url 'post_list' %}">	
+		<img src="{% static 'blog/images/ek.jpg' %}" class="img-circle"/>
+	</a>
+	<h1><a href="{% url 'post_list' %}">Xpaza's Blog</a></h1>
+	
+</div>
+
+
+<div class="content container-fluid">
+	<div class="row">
+		<div class="col-lg-9">
+			<div class="jumbotron">
+				
+			{% block content %}
+			
+			{% endblock %}
+
+			</div>
+		</div>
+		<div class="col-lg-3">
+			{% block aside %}
+			{% endblock %}
+
+			<h2><i>Advertise here</i></h2>
+			<img src="{% static 'blog/images/car.jpg' %}" class="img-rounded pic" alt='cartree'/>
+		</div>
+	</div>
+    
+</div>
+
+<div class="footer jumbotron">
+	<footer>
+  		<p>EsparTech </p>
+  		<p>Contact information: <a href="mailto:esparzar535@ymail.com">
+  		esparzar535@gmail.com</a></p>
+ 	</footer>
+</div>
+ 
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h2 class="well" id="myHeader">New Post</h2>
+<form method="POST" class="post-form">
+<div class="form-group">
+{% csrf_token %}
+	<section>
+	<div class="input-group">
+	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>	
+	{{ form.as_p }}
+	</div>
+	</section>
+	<button type="submit" class="save btn btn-default">Post</button>
+</div>	
+</form>
+{% endblock %}
+
+
+
+  <form>
+    
+      
+      <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+    </div>
